@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Natron &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="OutputFileParam" href="OutputFileParam.html" />
+    <link rel="prev" title="Layer" href="Layer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_group.html">Reference Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Developers Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../APIReference.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">NatronEngine</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#detailed-description">Detailed Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../NatronGui/index.html">NatronGui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devel-faq.html">Natron Python FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Developers Guide</a> &raquo;</li>
+        
+          <li><a href="../../APIReference.html">Python API</a> &raquo;</li>
+        
+          <li><a href="index.html">NatronEngine</a> &raquo;</li>
+        
+      <li>Natron</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/devel/PythonReference/NatronEngine/Natron.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-NatronEngine"></span><div class="section" id="natron">
+<span id="id1"></span><h1>Natron<a class="headerlink" href="#natron" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
+<p>This class contains enumerations that are used by some functions of the API to return status
+that are more complicated than a simple boolean value.</p>
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.StandardButtonEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">StandardButtonEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.StandardButtonEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eStandardButtonNoButton           = 0x00000000,</p></li>
+<li><p>eStandardButtonEscape             = 0x00000200,            // obsolete</p></li>
+<li><p>eStandardButtonOk                 = 0x00000400,</p></li>
+<li><p>eStandardButtonSave               = 0x00000800,</p></li>
+<li><p>eStandardButtonSaveAll            = 0x00001000,</p></li>
+<li><p>eStandardButtonOpen               = 0x00002000,</p></li>
+<li><p>eStandardButtonYes                = 0x00004000,</p></li>
+<li><p>eStandardButtonYesToAll           = 0x00008000,</p></li>
+<li><p>eStandardButtonNo                 = 0x00010000,</p></li>
+<li><p>eStandardButtonNoToAll            = 0x00020000,</p></li>
+<li><p>eStandardButtonAbort              = 0x00040000,</p></li>
+<li><p>eStandardButtonRetry              = 0x00080000,</p></li>
+<li><p>eStandardButtonIgnore             = 0x00100000,</p></li>
+<li><p>eStandardButtonClose              = 0x00200000,</p></li>
+<li><p>eStandardButtonCancel             = 0x00400000,</p></li>
+<li><p>eStandardButtonDiscard            = 0x00800000,</p></li>
+<li><p>eStandardButtonHelp               = 0x01000000,</p></li>
+<li><p>eStandardButtonApply              = 0x02000000,</p></li>
+<li><p>eStandardButtonReset              = 0x04000000,</p></li>
+<li><p>eStandardButtonRestoreDefaults    = 0x08000000</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ImagePlaneDescEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ImagePlaneDescEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ImagePlaneDescEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eImageComponentNone = 0,</p></li>
+<li><p>eImageComponentAlpha,</p></li>
+<li><p>eImageComponentRGB,</p></li>
+<li><p>eImageComponentRGBA</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ImageBitDepthEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ImageBitDepthEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ImageBitDepthEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eImageBitDepthNone = 0,</p></li>
+<li><p>eImageBitDepthByte,</p></li>
+<li><p>eImageBitDepthShort,</p></li>
+<li><p>eImageBitDepthFloat</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.KeyframeTypeEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">KeyframeTypeEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.KeyframeTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eKeyframeTypeConstant = 0,</p></li>
+<li><p>eKeyframeTypeLinear = 1,</p></li>
+<li><p>eKeyframeTypeSmooth = 2,</p></li>
+<li><p>eKeyframeTypeCatmullRom = 3,</p></li>
+<li><p>eKeyframeTypeCubic = 4,</p></li>
+<li><p>eKeyframeTypeHorizontal = 5,</p></li>
+<li><p>eKeyframeTypeFree = 6,</p></li>
+<li><p>eKeyframeTypeBroken = 7,</p></li>
+<li><p>eKeyframeTypeNone = 8</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ValueChangedReasonEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ValueChangedReasonEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ValueChangedReasonEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eValueChangedReasonUserEdited = 0,
+A user change to the param triggered the call, gui will not be refreshed but onParamChanged will be called</p></li>
+<li><p>eValueChangedReasonPluginEdited ,
+A plugin change triggered the call, gui will be refreshed but onParamChanged not called</p></li>
+<li><p>eValueChangedReasonNatronGuiEdited,
+Natron gui called setValue itself, onParamChanged will be called (with a reason of User edited) AND param gui refreshed</p></li>
+<li><p>eValueChangedReasonNatronInternalEdited,
+Natron engine called setValue itself, onParamChanged will be called (with a reason of plugin edited) AND param gui refreshed</p></li>
+<li><p>eValueChangedReasonTimeChanged ,
+A time-line seek changed the call, called when timeline time changes</p></li>
+<li><p>eValueChangedReasonSlaveRefresh ,
+A master parameter ordered the slave to refresh its value</p></li>
+<li><p>eValueChangedReasonRestoreDefault ,
+The param value has been restored to its defaults</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.AnimationLevelEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">AnimationLevelEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.AnimationLevelEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eAnimationLevelNone = 0,</p></li>
+<li><p>eAnimationLevelInterpolatedValue = 1,</p></li>
+<li><p>eAnimationLevelOnKeyframe = 2</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.OrientationEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">OrientationEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.OrientationEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eOrientationHorizontal = 0x1,</p></li>
+<li><p>eOrientationVertical = 0x2</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ImagePremultiplicationEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ImagePremultiplicationEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ImagePremultiplicationEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eImagePremultiplicationOpaque = 0,</p></li>
+<li><p>eImagePremultiplicationPremultiplied,</p></li>
+<li><p>eImagePremultiplicationUnPremultiplied,</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.StatusEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">StatusEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.StatusEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eStatusOK = 0,</p></li>
+<li><p>eStatusFailed = 1,</p></li>
+<li><p>eStatusReplyDefault = 14</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ViewerCompositingOperatorEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ViewerCompositingOperatorEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ViewerCompositingOperatorEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eViewerCompositingOperatorNone,</p></li>
+<li><p>eViewerCompositingOperatorOver,</p></li>
+<li><p>eViewerCompositingOperatorMinus,</p></li>
+<li><p>eViewerCompositingOperatorUnder,</p></li>
+<li><p>eViewerCompositingOperatorWipe</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.PlaybackModeEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">PlaybackModeEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.PlaybackModeEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>ePlaybackModeLoop = 0,</p></li>
+<li><p>ePlaybackModeBounce,</p></li>
+<li><p>ePlaybackModeOnce</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.PixmapEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">PixmapEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.PixmapEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference external" href="https://github.com/NatronGitHub/Natron/blob/master/Global/Enums.h">here</a> for
+potential values of this enumeration.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="NatronEngine.NatronEngine.Natron.ViewerColorSpaceEnum">
+<code class="sig-prename descclassname"><span class="pre">NatronEngine.Natron.</span></code><code class="sig-name descname"><span class="pre">ViewerColorSpaceEnum</span></code><a class="headerlink" href="#NatronEngine.NatronEngine.Natron.ViewerColorSpaceEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can have the following values:</p>
+<ul class="simple">
+<li><p>eViewerColorSpaceSRGB = 0,</p></li>
+<li><p>eViewerColorSpaceLinear,</p></li>
+<li><p>eViewerColorSpaceRec709</p></li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="OutputFileParam.html" class="btn btn-neutral float-right" title="OutputFileParam" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Layer.html" class="btn btn-neutral float-left" title="Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

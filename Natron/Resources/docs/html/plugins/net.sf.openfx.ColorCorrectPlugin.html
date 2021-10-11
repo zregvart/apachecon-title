@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ColorCorrect node &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ColorLookup node" href="net.sf.openfx.ColorLookupPlugin.html" />
+    <link rel="prev" title="ClipTest node" href="net.sf.openfx.ClipTestPlugin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../_group.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_prefs.html">Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_environment.html">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupImage.html">Image nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupDraw.html">Draw nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTime.html">Time nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupChannel.html">Channel nodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../_groupColor.html">Color nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.AddPlugin.html">Add node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Clamp.html">Clamp node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.ClipTestPlugin.html">ClipTest node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ColorCorrect node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controls">Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.ColorLookupPlugin.html">ColorLookup node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.ColorMatrixPlugin.html">ColorMatrix node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.ColorSuppress.html">ColorSuppress node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgEqualize.html">Equalize node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.GammaPlugin.html">Gamma node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.GradePlugin.html">Grade node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.HSIToRGB.html">HSIToRGB node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.HSLToRGB.html">HSLToRGB node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.HSVToRGB.html">HSVToRGB node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.HSVToolPlugin.html">HSVTool node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgHistEQ.html">HistEQ node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.HueCorrect.html">HueCorrect node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Invert.html">Invert node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.LabToRGB709.html">LabToRGB709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.LabToXYZ.html">LabToXYZ node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Log2Lin.html">Log2Lin node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.MultiplyPlugin.html">Multiply node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIOCDLTransform.html">OCIOCDLTransform node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIOColorSpace.html">OCIOColorSpace node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIODisplay.html">OCIODisplay node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIOFileTransform.html">OCIOFileTransform node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIOLogConvert.html">OCIOLogConvert node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OCIOLookTransform.html">OCIOLookTransform node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.PLogLin.html">PLogLin node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Quantize.html">Quantize node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGB709ToLab.html">RGB709ToLab node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGB709ToXYZ.html">RGB709ToXYZ node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToHSI.html">RGBToHSI node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToHSL.html">RGBToHSL node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToHSV.html">RGBToHSV node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYCbCr601.html">RGBToYCbCr601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYCbCr709.html">RGBToYCbCr709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYPbPr601.html">RGBToYPbPr601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYPbPr709.html">RGBToYPbPr709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYUV601.html">RGBToYUV601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.RGBToYUV709.html">RGBToYUV709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SaturationPlugin.html">Saturation node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.VectorToColorPlugin.html">VectorToColor node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.XYZToLab.html">XYZToLab node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.XYZToRGB709.html">XYZToRGB709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.XYZToxyY.html">XYZToxyY node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YCbCrToRGB601.html">YCbCrToRGB601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YCbCrToRGB709.html">YCbCrToRGB709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YPbPrToRGB601.html">YPbPrToRGB601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YPbPrToRGB709.html">YPbPrToRGB709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YUVToRGB601.html">YUVToRGB601 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.YUVToRGB709.html">YUVToRGB709 node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.xyYToXYZ.html">xyYToXYZ node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupFilter.html">Filter nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupKeyer.html">Keyer nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupMerge.html">Merge nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTransform.html">Transform nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupViews.html">Views nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupOther.html">Other nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupGMIC.html">GMIC nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupExtra.html">Extra nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../_group.html">Reference Guide</a> &raquo;</li>
+        
+          <li><a href="../_groupColor.html">Color nodes</a> &raquo;</li>
+        
+      <li>ColorCorrect node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/plugins/net.sf.openfx.ColorCorrectPlugin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="colorcorrect-node">
+<span id="net-sf-openfx-colorcorrectplugin"></span><h1>ColorCorrect node<a class="headerlink" href="#colorcorrect-node" title="Permalink to this headline">¶</a></h1>
+<!-- Do not edit this file! It is generated automatically by Natron itself. --><p><a class="reference internal" href="../_images/net.sf.openfx.ColorCorrectPlugin.png"><img alt="pluginIcon" src="../_images/net.sf.openfx.ColorCorrectPlugin.png" style="width: 10.0%;" /></a></p>
+<p><em>This documentation is for version 2.1 of ColorCorrect (net.sf.openfx.ColorCorrectPlugin).</em></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Adjusts the saturation, contrast, gamma, gain and offset of an image.</p>
+<p>The ranges of the shadows, midtones and highlights are controlled by the curves in the “Ranges” tab.</p>
+<p>The Contrast adjustment works using the formula: Output = (Input/0.18)^Contrast*0.18.</p>
+<p>See also:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://opticalenquiry.com/nuke/index.php?title=ColorCorrect">http://opticalenquiry.com/nuke/index.php?title=ColorCorrect</a></p></li>
+<li><p><a class="reference external" href="https://compositormathematic.wordpress.com/2013/07/06/gamma-contrast/">https://compositormathematic.wordpress.com/2013/07/06/gamma-contrast/</a></p></li>
+</ul>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 42%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Optional</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Source</p></td>
+<td></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mask</p></td>
+<td></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 6%" />
+<col style="width: 12%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter / script name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">MasterSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">MasterContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">MasterGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">MasterGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">MasterOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">ShadowsEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>When checked, Shadows correction is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">ShadowsSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">ShadowsContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">ShadowsGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">ShadowsGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">ShadowsOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">MidtonesEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>When checked, Midtones correction is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">MidtonesSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">MidtonesContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">MidtonesGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">MidtonesGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">MidtonesOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">HighlightsEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>When checked, Highlights correction is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">HighlightsSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">HighlightsContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">HighlightsGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">HighlightsGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">HighlightsOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Range / <code class="docutils literal notranslate"><span class="pre">range</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>min: 0 max: 1</p></td>
+<td><p>Expected range for input values. Within this range, a lookup table is used for faster computation.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tone Ranges / <code class="docutils literal notranslate"><span class="pre">toneRanges</span></code></p></td>
+<td><p>Parametric</p></td>
+<td><p>Shadow:   Highlight:</p></td>
+<td><p>Tone ranges lookup table</p></td>
+</tr>
+<tr class="row-odd"><td><p>Luminance Math / <code class="docutils literal notranslate"><span class="pre">luminanceMath</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Rec. 709</p></td>
+<td><div class="line-block">
+<div class="line">Formula used to compute luminance from RGB values (used for saturation adjustments).</div>
+<div class="line"><strong>Rec. 709 (rec709)</strong>: Use Rec. 709 (0.2126r + 0.7152g + 0.0722b).</div>
+<div class="line"><strong>Rec. 2020 (rec2020)</strong>: Use Rec. 2020 (0.2627r + 0.6780g + 0.0593b).</div>
+<div class="line"><strong>ACES AP0 (acesap0)</strong>: Use ACES AP0 (0.3439664498r + 0.7281660966g + -0.0721325464b).</div>
+<div class="line"><strong>ACES AP1 (acesap1)</strong>: Use ACES AP1 (0.2722287168r + 0.6740817658g + 0.0536895174b).</div>
+<div class="line"><strong>CCIR 601 (ccir601)</strong>: Use CCIR 601 (0.2989r + 0.5866g + 0.1145b).</div>
+<div class="line"><strong>Average (average)</strong>: Use average of r, g, b.</div>
+<div class="line"><strong>Max (max)</strong>: Use max or r, g, b.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Clamp Black / <code class="docutils literal notranslate"><span class="pre">clampBlack</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>All colors below 0 on output are set to 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clamp White / <code class="docutils literal notranslate"><span class="pre">clampWhite</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>All colors above 1 on output are set to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>(Un)premult / <code class="docutils literal notranslate"><span class="pre">premult</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Divide the image by the alpha channel before processing, and re-multiply it afterwards. Use if the input images are premultiplied.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Invert Mask / <code class="docutils literal notranslate"><span class="pre">maskInvert</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, the effect is fully applied where the mask is 0.</p></td>
+</tr>
+<tr class="row-even"><td><p>Mix / <code class="docutils literal notranslate"><span class="pre">mix</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Mix factor between the original and the transformed image.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="net.sf.openfx.ColorLookupPlugin.html" class="btn btn-neutral float-right" title="ColorLookup node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="net.sf.openfx.ClipTestPlugin.html" class="btn btn-neutral float-left" title="ClipTest node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

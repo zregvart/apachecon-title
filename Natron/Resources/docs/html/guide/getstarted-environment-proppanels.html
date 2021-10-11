@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Properties panels &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the color controls" href="getstarted-environment-color.html" />
+    <link rel="prev" title="Navigating inside the node graph" href="getstarted-environment-nodegraph.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="getstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="getstarted-about.html">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-installation.html">Installation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="getstarted-environment.html">Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#generic-description">Generic Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-toolbar">The Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-menu-bar">The Menu bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-viewer-panel">The Viewer panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-properties-editor">The Properties editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-node-graph">The Node graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-curve-editor">The Curve editor</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="getstarted-environment.html#the-dopesheet">The Dopesheet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+        
+          <li><a href="getstarted.html">Getting started</a> &raquo;</li>
+        
+          <li><a href="getstarted-environment.html">Environment</a> &raquo;</li>
+        
+      <li>Properties panels</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/guide/getstarted-environment-proppanels.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="properties-panels">
+<h1>Properties panels<a class="headerlink" href="#properties-panels" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Here you can interact with the node properties to fine tune the effect on the image. As in the rest of Natron all changes are non destructive and can be modified at any time.</p>
+<img alt="../_images/proppanel_blur_02.png" src="../_images/proppanel_blur_02.png" />
+<dl class="simple">
+<dt>The elements of the properties panel are:</dt><dd><ul class="simple">
+<li><p>1 Maximum number nodes opened in the properties window</p></li>
+<li><p>2 icon of the node to identify it’s type. Most useful when the name has been changed. Hovering the icon popups the node type in plain text</p></li>
+<li><p>3 icon of the presets / user menu <a class="reference internal" href="#presets-menu"><span class="std std-ref">Presets menu</span></a></p></li>
+<li><p>4 icon of the center in node graph. When you click this the view in the node graph is moved to center the node on screen</p></li>
+<li><p>5 Node name This can be changed but it is good to keep this name to easily tell the type of a node and keep syntax short, should you reference this node in an expression. For more verbosity the node “label” field gives more freedom.</p></li>
+<li><p>6 Node parameter tabs. The parameters of a node are spread across several tabs. The controls, Node, Info tabs are present in most nodes but others can sometimes be found too. You can even add tabs through</p></li>
+<li><p>7 The color of the node in the graph window</p></li>
+<li><p>8 Undo/redo specific for this node and not the overall Natron session.</p></li>
+<li><p>9 restore values for this operator. When clicked it will reset the node (including those with expressions)</p></li>
+<li><p>10 the ? icon opens the documentation for the specific node</p></li>
+<li><p>11 shrink the node pane to show only animated parameters. Use only after you started your animations.</p></li>
+<li><p>12 flat line: shrink completely the node parameters display. Box icon: detach the node of the current pane</p></li>
+<li><p>13 Global parameters :ref: proppanel_parameters</p></li>
+<li><p>14 Main parameters</p></li>
+<li><p>15 Optimisation parameters</p></li>
+<li><p>16 Limitation parameters</p></li>
+</ul>
+</dd>
+</dl>
+<p>_proppanel_parameters:
+Controls tab
+————–</p>
+<dl class="simple">
+<dt>RGBA</dt><dd><p>The channels that will be computed</p>
+</dd>
+<dt>Main parameters</dt><dd><p>These ones are different for each node type as they are the ones really defining the effect.</p>
+</dd>
+<dt>Border Conditions</dt><dd><p>Sets the way to evaluate pixels beyond the canvas edges
+“Nearest” virtually extends the image to avoid the appearance of dark edges when blurring and set to “Black”</p>
+</dd>
+<dt>Expand RoD</dt><dd><p>Let the calculation of the node run for “out of image” pixels. These pixels could be brought back in frame by a subsequent transform lower in the graph</p>
+</dd>
+<dt>Crop to Format</dt><dd><p>crop the result to the format defined in pro ject settings avoiding useless calculations</p>
+</dd>
+<dt>Output Layer</dt><dd><p>Define the channels that will actually be modified by the node</p>
+</dd>
+<dt>Mask</dt><dd><p>Define how the mask provided on the mask input should be treated. By default the node affects the image only where the alpha channel of the mask input is not Black</p>
+</dd>
+<dt>Mix</dt><dd><p>Let’s you revert partially the effect to go back toward the original image</p>
+</dd>
+</dl>
+<div class="section" id="node-tab">
+<h2>Node tab<a class="headerlink" href="#node-tab" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/proppanel_blur_03.png" src="../_images/proppanel_blur_03.png" />
+<dl class="simple">
+<dt>label</dt><dd><p>Here you can put custom test or expressions that will be shown in the node graph on the “body” of the node.</p>
+</dd>
+<dt>Hide inputs</dt><dd><p>Hide the incoming connexion arrow of the node. Useful when it is very far from it’s inputs</p>
+</dd>
+<dt>Force caching</dt><dd><p>Avoid rerendering this node (and ustream ones) when your are done setting up this part and will start to add more nodes downstream.</p>
+</dd>
+<dt>Preview</dt><dd><p>Add a “postage stamp” to the node to get a preview of the image getting out of it.</p>
+</dd>
+<dt>Disable</dt><dd><p>Same as toggle with “D” key to compare with and without the effect of the node</p>
+</dd>
+<dt>Lifetime</dt><dd><p>Save computation time by not evaluating this node outside of the Lifetime interval. This is similar to the in/out points of a clip in editing</p>
+</dd>
+<dt>Callbacks</dt><dd><p>are for python scripting and automation of Natron</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="info-tab">
+<h2>Info tab<a class="headerlink" href="#info-tab" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/proppanel_blur_04.png" src="../_images/proppanel_blur_04.png" />
+<p>Here you can check the properties of the data generated by the node. It may be useful if your project becomes suddenly very slow to compute. For example, memory can be filled by an image carrying too many Layers that may not be useful</p>
+</div>
+<div class="section" id="user-tab-s">
+<h2>User tab(s)<a class="headerlink" href="#user-tab-s" title="Permalink to this headline">¶</a></h2>
+<p>To build expressions you can add new parameters to your node. They can’t be added to default tabs. You will be prompted to add a user tab before adding new parameters to it with command “Manage user parameters… ” <a class="reference internal" href="#presets-menu"><span class="std std-ref">Presets menu</span></a></p>
+</div>
+<div class="section" id="presets-menu">
+<span id="id1"></span><h2>Presets menu<a class="headerlink" href="#presets-menu" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>This menu let’s you work on the parameters of the node</p>
+<img alt="../_images/proppanel_presets_01.png" src="../_images/proppanel_presets_01.png" />
+</div></blockquote>
+<dl class="simple">
+<dt>Import  Export presets</dt><dd><p>Let you save to file the values of all the parameters of the node at once. This can then be restored with “Import”</p>
+</dd>
+<dt>Manage user parameters…</dt><dd><p>A menu to add new parameters to your node. They will be useful to build expressions that can be modified interactively (on “real” parameters)</p>
+</dd>
+<dt>Set key on all parameters</dt><dd><p>A quick and dirty way to animate the values of a node</p>
+</dd>
+<dt>Remove animation on all parameters</dt><dd><p>A quick way to “freeze” a node settings. Only animation curves will be frozen. Expressions are kept.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getstarted-environment-color.html" class="btn btn-neutral float-right" title="Using the color controls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getstarted-environment-nodegraph.html" class="btn btn-neutral float-left" title="Navigating inside the node graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

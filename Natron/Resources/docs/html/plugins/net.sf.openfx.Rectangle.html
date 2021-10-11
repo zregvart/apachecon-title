@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Rectangle node &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Roto node" href="fr.inria.built-in.Roto.html" />
+    <link rel="prev" title="Rand node" href="net.sf.openfx.Noise.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../_group.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_prefs.html">Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_environment.html">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupImage.html">Image nodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../_groupDraw.html">Draw nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.LightWrap.html">LightWrap node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgNoise.html">Noise node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgPlasma.html">Plasma node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Radial.html">Radial node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Ramp.html">Ramp node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Noise.html">Rand node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Rectangle node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controls">Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.built-in.Roto.html">Roto node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.built-in.RotoPaint.html">RotoPaint node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SeGrain.html">SeGrain node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SeNoise.html">SeNoise node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.fxarena.openfx.Text.html">Text node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTime.html">Time nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupChannel.html">Channel nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupColor.html">Color nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupFilter.html">Filter nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupKeyer.html">Keyer nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupMerge.html">Merge nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTransform.html">Transform nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupViews.html">Views nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupOther.html">Other nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupGMIC.html">GMIC nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupExtra.html">Extra nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../_group.html">Reference Guide</a> &raquo;</li>
+        
+          <li><a href="../_groupDraw.html">Draw nodes</a> &raquo;</li>
+        
+      <li>Rectangle node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/plugins/net.sf.openfx.Rectangle.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rectangle-node">
+<span id="net-sf-openfx-rectangle"></span><h1>Rectangle node<a class="headerlink" href="#rectangle-node" title="Permalink to this headline">¶</a></h1>
+<!-- Do not edit this file! It is generated automatically by Natron itself. --><p><a class="reference internal" href="../_images/net.sf.openfx.Rectangle.png"><img alt="pluginIcon" src="../_images/net.sf.openfx.Rectangle.png" style="width: 10.0%;" /></a></p>
+<p><em>This documentation is for version 2.1 of Rectangle (net.sf.openfx.Rectangle).</em></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Draw a rectangle.</p>
+<p>The rectangle is composited with the source image using the ‘over’ operator.</p>
+<p>If no source is connected, this effect behaves like a generator. Its region of definition is:</p>
+<ul class="simple">
+<li><p>The selected format if the Extent parameter is a format.</p></li>
+<li><p>The project output format if Color0 is not black and transparent.</p></li>
+<li><p>The selected extent plus a one-pixel border if Color0 is black and transparent.</p></li>
+</ul>
+<p>See also: <a class="reference external" href="http://opticalenquiry.com/nuke/index.php?title=Rectangle">http://opticalenquiry.com/nuke/index.php?title=Rectangle</a></p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 42%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Optional</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Source</p></td>
+<td></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mask</p></td>
+<td></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 4%" />
+<col style="width: 9%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter / script name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Extent / <code class="docutils literal notranslate"><span class="pre">extent</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Size</p></td>
+<td><div class="line-block">
+<div class="line">Extent (size and offset) of the output.</div>
+<div class="line"><strong>Format (format)</strong>: Use a pre-defined image format.</div>
+<div class="line"><strong>Size (size)</strong>: Use a specific extent (size and offset).</div>
+<div class="line"><strong>Project (project)</strong>: Use the project extent (size and offset).</div>
+<div class="line"><strong>Default (default)</strong>: Use the default extent (e.g. the source clip extent, if connected).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Center / <code class="docutils literal notranslate"><span class="pre">recenter</span></code></p></td>
+<td><p>Button</p></td>
+<td></td>
+<td><p>Centers the region of definition to the input region of definition. If there is no input, then the region of definition is centered to the project window.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reformat / <code class="docutils literal notranslate"><span class="pre">reformat</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Set the output format to the given extent, except if the Bottom Left or Size parameters is animated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Format / <code class="docutils literal notranslate"><span class="pre">NatronParamFormatChoice</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>HD 1920x1080</p></td>
+<td><div class="line-block">
+<div class="line">The output format</div>
+<div class="line"><strong>PC_Video 640x480 (PC_Video)</strong></div>
+<div class="line"><strong>NTSC 720x486 0.91 (NTSC)</strong></div>
+<div class="line"><strong>PAL 720x576 1.09 (PAL)</strong></div>
+<div class="line"><strong>NTSC_16:9 720x486 1.21 (NTSC_16:9)</strong></div>
+<div class="line"><strong>PAL_16:9 720x576 1.46 (PAL_16:9)</strong></div>
+<div class="line"><strong>HD_720 1280x720 (HD_720)</strong></div>
+<div class="line"><strong>HD 1920x1080 (HD)</strong></div>
+<div class="line"><strong>UHD_4K 3840x2160 (UHD_4K)</strong></div>
+<div class="line"><strong>1K_Super_35(full-ap) 1024x778 (1K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>1K_Cinemascope 914x778 2.00 (1K_Cinemascope)</strong></div>
+<div class="line"><strong>2K_Super_35(full-ap) 2048x1556 (2K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>2K_Cinemascope 1828x1556 2.00 (2K_Cinemascope)</strong></div>
+<div class="line"><strong>2K_DCP 2048x1080 (2K_DCP)</strong></div>
+<div class="line"><strong>4K_Super_35(full-ap) 4096x3112 (4K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>4K_Cinemascope 3656x3112 2.00 (4K_Cinemascope)</strong></div>
+<div class="line"><strong>4K_DCP 4096x2160 (4K_DCP)</strong></div>
+<div class="line"><strong>square_256 256x256 (square_256)</strong></div>
+<div class="line"><strong>square_512 512x512 (square_512)</strong></div>
+<div class="line"><strong>square_1K 1024x1024 (square_1K)</strong></div>
+<div class="line"><strong>square_2K 2048x2048 (square_2K)</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Bottom Left / <code class="docutils literal notranslate"><span class="pre">bottomLeft</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0</p></td>
+<td><p>Coordinates of the bottom left corner of the size rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Size / <code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>w: 1 h: 1</p></td>
+<td><p>Width and height of the size rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>Interactive Update / <code class="docutils literal notranslate"><span class="pre">interactive</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>If checked, update the parameter values during interaction with the image viewer, else update the values when pen is released.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frame Range / <code class="docutils literal notranslate"><span class="pre">frameRange</span></code></p></td>
+<td><p>Integer</p></td>
+<td><p>min: 1 max: 1</p></td>
+<td><p>Time domain.</p></td>
+</tr>
+<tr class="row-even"><td><p>Corner Radius / <code class="docutils literal notranslate"><span class="pre">cornerRadius</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0</p></td>
+<td><p>If non-zero, this is the radius of the round corners.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Softness / <code class="docutils literal notranslate"><span class="pre">softness</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Softness of the rectangle edges. Draws an anti-aliased rectangle if zero</p></td>
+</tr>
+<tr class="row-even"><td><p>Color 0 / <code class="docutils literal notranslate"><span class="pre">color0</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Color 1 / <code class="docutils literal notranslate"><span class="pre">color1</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Expand RoD / <code class="docutils literal notranslate"><span class="pre">expandRoD</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>Expand the source region of definition by the shape RoD (if Source is connected and color0=(0,0,0,0)).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Invert Mask / <code class="docutils literal notranslate"><span class="pre">maskInvert</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, the effect is fully applied where the mask is 0.</p></td>
+</tr>
+<tr class="row-even"><td><p>Mix / <code class="docutils literal notranslate"><span class="pre">mix</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Mix factor between the original and the transformed image.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fr.inria.built-in.Roto.html" class="btn btn-neutral float-right" title="Roto node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="net.sf.openfx.Noise.html" class="btn btn-neutral float-left" title="Rand node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

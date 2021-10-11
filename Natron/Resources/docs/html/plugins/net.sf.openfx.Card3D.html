@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Card3D node &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CornerPin node" href="net.sf.openfx.CornerPinPlugin.html" />
+    <link rel="prev" title="AdjustRoD node" href="net.sf.openfx.AdjustRoDPlugin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../_group.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_prefs.html">Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_environment.html">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupImage.html">Image nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupDraw.html">Draw nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTime.html">Time nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupChannel.html">Channel nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupColor.html">Color nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupFilter.html">Filter nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupKeyer.html">Keyer nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupMerge.html">Merge nodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../_groupTransform.html">Transform nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.AdjustRoDPlugin.html">AdjustRoD node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Card3D node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controls">Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.CornerPinPlugin.html">CornerPin node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.CornerPinMaskedPlugin.html">CornerPinMasked node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.CropPlugin.html">Crop node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.IDistort.html">IDistort node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.LensDistortion.html">LensDistortion node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Mirror.html">Mirror node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Position.html">Position node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Reformat.html">Reformat node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.openfx.OIIOResize.html">Resize node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.STMap.html">STMap node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SpriteSheet.html">SpriteSheet node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.built-in.Tracker.html">Tracker node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.TransformPlugin.html">Transform node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.TransformMaskedPlugin.html">TransformMasked node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupViews.html">Views nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupOther.html">Other nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupGMIC.html">GMIC nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupExtra.html">Extra nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../_group.html">Reference Guide</a> &raquo;</li>
+        
+          <li><a href="../_groupTransform.html">Transform nodes</a> &raquo;</li>
+        
+      <li>Card3D node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/plugins/net.sf.openfx.Card3D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="card3d-node">
+<span id="net-sf-openfx-card3d"></span><h1>Card3D node<a class="headerlink" href="#card3d-node" title="Permalink to this headline">¶</a></h1>
+<!-- Do not edit this file! It is generated automatically by Natron itself. --><p><em>This documentation is for version 1.0 of Card3D (net.sf.openfx.Card3D).</em></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Card3D.</p>
+<p>This effect applies a transform that corresponds to projection the source image onto a 3D card in space. The 3D card is positioned with relative to the Axis position, and the Camera position may also be given. The Axis may be used to apply the same global motion to several cards.</p>
+<p>This plugin concatenates transforms.</p>
+<p><a class="reference external" href="http://opticalenquiry.com/nuke/index.php?title=Card3D">http://opticalenquiry.com/nuke/index.php?title=Card3D</a></p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 42%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Optional</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Source</p></td>
+<td></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 2%" />
+<col style="width: 3%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter / script name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Import Format / <code class="docutils literal notranslate"><span class="pre">axisImportFormat</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>chan</p></td>
+<td><div class="line-block">
+<div class="line">The format of the file to import.</div>
+<div class="line"><strong>chan</strong>: Chan format, each line is FRAME TX TY TZ RX RY RZ VFOV. Can be created using Natron, Nuke, 3D-Equalizer, Maya and other 3D tracking software. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</div>
+<div class="line"><strong>Boujou (boujou)</strong>: Boujou text export. In Boujou, after finishing the track and solving, go to Export &gt; Export Camera Solve (Or press F12) &gt; choose where to save the data and give it a name, click he drop down Export Type and make sure it will save as a .txt, then click Save. Each camera line is R(0,0) R(0,1) R(0,2) R(1,0) R(1,1) R(1,2) R(2,0) R(2,1) R(2,2) Tx Ty Tz F(mm).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Import / <code class="docutils literal notranslate"><span class="pre">axisImportFile</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Import a chan file created using 3D tracking software, or a txt file created using Boujou.</p></td>
+</tr>
+<tr class="row-even"><td><p>Export / <code class="docutils literal notranslate"><span class="pre">axisExportChan</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Export a .chan file which can be used in Natron, Nuke or 3D tracking software, such as 3D-Equalizer, Maya, or Boujou. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transform Order / <code class="docutils literal notranslate"><span class="pre">axisXformOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>SRT</p></td>
+<td><div class="line-block">
+<div class="line">Order in which scale (S), rotation (R) and translation (T) are applied.</div>
+<div class="line"><strong>SRT (srt)</strong>: Scale, Rotation, Translation.</div>
+<div class="line"><strong>STR (str)</strong>: Scale, Translation, Rotation.</div>
+<div class="line"><strong>RST (rst)</strong>: Rotation, Scale, Translation.</div>
+<div class="line"><strong>RTS (rts)</strong>: Rotation, Translation, Scale.</div>
+<div class="line"><strong>TSR (tsr)</strong>: Translation, Scale, Rotation.</div>
+<div class="line"><strong>TRS (trs)</strong>: Translation, Rotation, Scale.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Rotation Order / <code class="docutils literal notranslate"><span class="pre">axisRotOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>ZXY</p></td>
+<td><div class="line-block">
+<div class="line">Order in which Euler angles are applied in the rotation.</div>
+<div class="line"><strong>XYZ (xyz)</strong>: Rotation over X axis, then Y and Z.</div>
+<div class="line"><strong>XZY (xzy)</strong>: Rotation over X axis, then Z and Y.</div>
+<div class="line"><strong>YXZ (yxz)</strong>: Rotation over Y axis, then X and Z.</div>
+<div class="line"><strong>YZX (yzx)</strong>: Rotation over Y axis, then Z and X.</div>
+<div class="line"><strong>ZXY (zxy)</strong>: Rotation over Z axis, then X and Y.</div>
+<div class="line"><strong>ZYX (zyx)</strong>: Rotation over Z axis, then Y and X.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Translate / <code class="docutils literal notranslate"><span class="pre">axisTranslate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Translation component.</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotate / <code class="docutils literal notranslate"><span class="pre">axisRotate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Euler angles (in degrees).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scale / <code class="docutils literal notranslate"><span class="pre">axisScaling</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 1 y: 1 z: 1</p></td>
+<td><p>Scale factor over each axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Uniform Scale / <code class="docutils literal notranslate"><span class="pre">axisUniformScale</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Scale factor over all axis. It is multiplied by the scale factor over each axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Skew / <code class="docutils literal notranslate"><span class="pre">axisSkew</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Skew over each axis, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pivot / <code class="docutils literal notranslate"><span class="pre">axisPivot</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>The position of the origin for position, scaling, skewing, and rotation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Specify Matrix / <code class="docutils literal notranslate"><span class="pre">axisUseMatrix</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Check to specify manually all the values for the position matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix11</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix12</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix13</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix14</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix21</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix22</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix23</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix24</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix31</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix32</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix33</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix34</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>-1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix41</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix42</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix43</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">axisMatrix44</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable Camera / <code class="docutils literal notranslate"><span class="pre">camEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Enable the camera projection parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam Import Format / <code class="docutils literal notranslate"><span class="pre">camImportFormat</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>chan</p></td>
+<td><div class="line-block">
+<div class="line">The format of the file to import.</div>
+<div class="line"><strong>chan</strong>: Chan format, each line is FRAME TX TY TZ RX RY RZ VFOV. Can be created using Natron, Nuke, 3D-Equalizer, Maya and other 3D tracking software. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</div>
+<div class="line"><strong>Boujou (boujou)</strong>: Boujou text export. In Boujou, after finishing the track and solving, go to Export &gt; Export Camera Solve (Or press F12) &gt; choose where to save the data and give it a name, click he drop down Export Type and make sure it will save as a .txt, then click Save. Each camera line is R(0,0) R(0,1) R(0,2) R(1,0) R(1,1) R(1,2) R(2,0) R(2,1) R(2,2) Tx Ty Tz F(mm).</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Cam Import / <code class="docutils literal notranslate"><span class="pre">camImportFile</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Import a chan file created using 3D tracking software, or a txt file created using Boujou.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam Export / <code class="docutils literal notranslate"><span class="pre">camExportChan</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Export a .chan file which can be used in Natron, Nuke or 3D tracking software, such as 3D-Equalizer, Maya, or Boujou. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam Transform Order / <code class="docutils literal notranslate"><span class="pre">camXformOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>SRT</p></td>
+<td><div class="line-block">
+<div class="line">Order in which scale (S), rotation (R) and translation (T) are applied.</div>
+<div class="line"><strong>SRT (srt)</strong>: Scale, Rotation, Translation.</div>
+<div class="line"><strong>STR (str)</strong>: Scale, Translation, Rotation.</div>
+<div class="line"><strong>RST (rst)</strong>: Rotation, Scale, Translation.</div>
+<div class="line"><strong>RTS (rts)</strong>: Rotation, Translation, Scale.</div>
+<div class="line"><strong>TSR (tsr)</strong>: Translation, Scale, Rotation.</div>
+<div class="line"><strong>TRS (trs)</strong>: Translation, Rotation, Scale.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Cam Rotation Order / <code class="docutils literal notranslate"><span class="pre">camRotOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>ZXY</p></td>
+<td><div class="line-block">
+<div class="line">Order in which Euler angles are applied in the rotation.</div>
+<div class="line"><strong>XYZ (xyz)</strong>: Rotation over X axis, then Y and Z.</div>
+<div class="line"><strong>XZY (xzy)</strong>: Rotation over X axis, then Z and Y.</div>
+<div class="line"><strong>YXZ (yxz)</strong>: Rotation over Y axis, then X and Z.</div>
+<div class="line"><strong>YZX (yzx)</strong>: Rotation over Y axis, then Z and X.</div>
+<div class="line"><strong>ZXY (zxy)</strong>: Rotation over Z axis, then X and Y.</div>
+<div class="line"><strong>ZYX (zyx)</strong>: Rotation over Z axis, then Y and X.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Cam Translate / <code class="docutils literal notranslate"><span class="pre">camTranslate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Translation component.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam Rotate / <code class="docutils literal notranslate"><span class="pre">camRotate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Euler angles (in degrees).</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam Scale / <code class="docutils literal notranslate"><span class="pre">camScaling</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 1 y: 1 z: 1</p></td>
+<td><p>Scale factor over each axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam Uniform Scale / <code class="docutils literal notranslate"><span class="pre">camUniformScale</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Scale factor over all axis. It is multiplied by the scale factor over each axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam Skew / <code class="docutils literal notranslate"><span class="pre">camSkew</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Skew over each axis, in degrees.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam Pivot / <code class="docutils literal notranslate"><span class="pre">camPivot</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>The position of the origin for position, scaling, skewing, and rotation.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam Specify Matrix / <code class="docutils literal notranslate"><span class="pre">camUseMatrix</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Check to specify manually all the values for the position matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix11</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix12</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix13</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix14</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix21</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix22</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix23</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix24</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix31</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix32</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix33</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix34</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>-1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix41</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix42</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix43</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cam / <code class="docutils literal notranslate"><span class="pre">camMatrix44</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Projection / <code class="docutils literal notranslate"><span class="pre">camprojection_mode</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Perspective</p></td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Perspective (perspective)</strong>: Perspective projection.</div>
+<div class="line"><strong>Orthographic (orthographic)</strong>: Orthographic projection</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Focal Length / <code class="docutils literal notranslate"><span class="pre">camfocal</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>50</p></td>
+<td><p>The camera focal length, in arbitrary units (usually either millimeters or 35 mm equivalent focal length). haperture and vaperture must be expressed in the same units.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Horiz. Aperture / <code class="docutils literal notranslate"><span class="pre">camhaperture</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>24.576</p></td>
+<td><p>The camera horizontal aperture (or film back width), in the same units as the focal length. In the case of scanned film, this can be obtained as image_width * scanner_pitch.</p></td>
+</tr>
+<tr class="row-even"><td><p>Vert. Aperture / <code class="docutils literal notranslate"><span class="pre">camvaperture</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>18.672</p></td>
+<td><p>The camera vertical aperture (or film back height), in the same units as the focal length. This does not affect the projection (which is computed from haperture and the image aspect ratio), but it is used to compute the focal length from vertical FOV when importing chan files, using the formula: focal = 0.5 * vaperture / tan(vfov/2). It is thus best set as: haperture = vaperture * image_width/image_height. In the case of scanned film, this can be obtained as image_height * scanner_pitch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Window Translate / <code class="docutils literal notranslate"><span class="pre">camwin_translate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0</p></td>
+<td><p>The camera window (or film back) is translated by this fraction of the horizontal aperture, without changing the position of the camera center. This can be used to model tilt-shift or perspective-control lens.</p></td>
+</tr>
+<tr class="row-even"><td><p>Window Scale / <code class="docutils literal notranslate"><span class="pre">camwin_scale</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 1 y: 1</p></td>
+<td><p>Scale the camera window (or film back).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Window Roll / <code class="docutils literal notranslate"><span class="pre">camwinroll</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Rotation (in degrees) of the camera window (or film back) around the z axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Import Format / <code class="docutils literal notranslate"><span class="pre">cardImportFormat</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>chan</p></td>
+<td><div class="line-block">
+<div class="line">The format of the file to import.</div>
+<div class="line"><strong>chan</strong>: Chan format, each line is FRAME TX TY TZ RX RY RZ VFOV. Can be created using Natron, Nuke, 3D-Equalizer, Maya and other 3D tracking software. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</div>
+<div class="line"><strong>Boujou (boujou)</strong>: Boujou text export. In Boujou, after finishing the track and solving, go to Export &gt; Export Camera Solve (Or press F12) &gt; choose where to save the data and give it a name, click he drop down Export Type and make sure it will save as a .txt, then click Save. Each camera line is R(0,0) R(0,1) R(0,2) R(1,0) R(1,1) R(1,2) R(2,0) R(2,1) R(2,2) Tx Ty Tz F(mm).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Import / <code class="docutils literal notranslate"><span class="pre">cardImportFile</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Import a chan file created using 3D tracking software, or a txt file created using Boujou.</p></td>
+</tr>
+<tr class="row-even"><td><p>Export / <code class="docutils literal notranslate"><span class="pre">cardExportChan</span></code></p></td>
+<td><p>N/A</p></td>
+<td></td>
+<td><p>Export a .chan file which can be used in Natron, Nuke or 3D tracking software, such as 3D-Equalizer, Maya, or Boujou. Be careful that the rotation order must be exactly the same when exporting and importing the chan file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transform Order / <code class="docutils literal notranslate"><span class="pre">cardXformOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>SRT</p></td>
+<td><div class="line-block">
+<div class="line">Order in which scale (S), rotation (R) and translation (T) are applied.</div>
+<div class="line"><strong>SRT (srt)</strong>: Scale, Rotation, Translation.</div>
+<div class="line"><strong>STR (str)</strong>: Scale, Translation, Rotation.</div>
+<div class="line"><strong>RST (rst)</strong>: Rotation, Scale, Translation.</div>
+<div class="line"><strong>RTS (rts)</strong>: Rotation, Translation, Scale.</div>
+<div class="line"><strong>TSR (tsr)</strong>: Translation, Scale, Rotation.</div>
+<div class="line"><strong>TRS (trs)</strong>: Translation, Rotation, Scale.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Rotation Order / <code class="docutils literal notranslate"><span class="pre">cardRotOrder</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>ZXY</p></td>
+<td><div class="line-block">
+<div class="line">Order in which Euler angles are applied in the rotation.</div>
+<div class="line"><strong>XYZ (xyz)</strong>: Rotation over X axis, then Y and Z.</div>
+<div class="line"><strong>XZY (xzy)</strong>: Rotation over X axis, then Z and Y.</div>
+<div class="line"><strong>YXZ (yxz)</strong>: Rotation over Y axis, then X and Z.</div>
+<div class="line"><strong>YZX (yzx)</strong>: Rotation over Y axis, then Z and X.</div>
+<div class="line"><strong>ZXY (zxy)</strong>: Rotation over Z axis, then X and Y.</div>
+<div class="line"><strong>ZYX (zyx)</strong>: Rotation over Z axis, then Y and X.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Translate / <code class="docutils literal notranslate"><span class="pre">cardTranslate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: -1</p></td>
+<td><p>Translation component.</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotate / <code class="docutils literal notranslate"><span class="pre">cardRotate</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Euler angles (in degrees).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scale / <code class="docutils literal notranslate"><span class="pre">cardScaling</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 1 y: 1 z: 1</p></td>
+<td><p>Scale factor over each axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Uniform Scale / <code class="docutils literal notranslate"><span class="pre">cardUniformScale</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Scale factor over all axis. It is multiplied by the scale factor over each axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Skew / <code class="docutils literal notranslate"><span class="pre">cardSkew</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>Skew over each axis, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pivot / <code class="docutils literal notranslate"><span class="pre">cardPivot</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0 z: 0</p></td>
+<td><p>The position of the origin for position, scaling, skewing, and rotation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Specify Matrix / <code class="docutils literal notranslate"><span class="pre">cardUseMatrix</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Check to specify manually all the values for the position matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix11</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix12</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix13</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix14</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix21</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix22</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix23</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix24</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix31</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix32</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix33</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix34</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>-1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix41</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix42</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix43</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ <code class="docutils literal notranslate"><span class="pre">cardMatrix44</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Matrix coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>Lens-In Focal / <code class="docutils literal notranslate"><span class="pre">lensInFocal</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>The focal length of the camera that took the picture on the card. The card is scaled so that at distance 1 (which is the default card Z) it occupies the field of view corresponding to lensInFocal and lensInHAperture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lens-In H.Aperture / <code class="docutils literal notranslate"><span class="pre">lensInHAperture</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>The horizontal aperture (or sensor/film back width) of the camera that took the picture on the card. The card is scaled so that at distance 1 (which is the default card Z) it occupies the field of view corresponding to lensInFocal and lensInHAperture.</p></td>
+</tr>
+<tr class="row-even"><td><p>Output Format / <code class="docutils literal notranslate"><span class="pre">format</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Project</p></td>
+<td><div class="line-block">
+<div class="line">Desired format for the output sequence.</div>
+<div class="line"><strong>Format (format)</strong>: Use a pre-defined image format.</div>
+<div class="line"><strong>Size (size)</strong>: Use a specific extent (size and offset).</div>
+<div class="line"><strong>Project (project)</strong>: Use the project extent (size and offset).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Center / <code class="docutils literal notranslate"><span class="pre">recenter</span></code></p></td>
+<td><p>Button</p></td>
+<td></td>
+<td><p>Centers the region of definition to the input region of definition. If there is no input, then the region of definition is centered to the project window.</p></td>
+</tr>
+<tr class="row-even"><td><p>Format / <code class="docutils literal notranslate"><span class="pre">NatronParamFormatChoice</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>HD 1920x1080</p></td>
+<td><div class="line-block">
+<div class="line">The output format</div>
+<div class="line"><strong>PC_Video 640x480 (PC_Video)</strong></div>
+<div class="line"><strong>NTSC 720x486 0.91 (NTSC)</strong></div>
+<div class="line"><strong>PAL 720x576 1.09 (PAL)</strong></div>
+<div class="line"><strong>NTSC_16:9 720x486 1.21 (NTSC_16:9)</strong></div>
+<div class="line"><strong>PAL_16:9 720x576 1.46 (PAL_16:9)</strong></div>
+<div class="line"><strong>HD_720 1280x720 (HD_720)</strong></div>
+<div class="line"><strong>HD 1920x1080 (HD)</strong></div>
+<div class="line"><strong>UHD_4K 3840x2160 (UHD_4K)</strong></div>
+<div class="line"><strong>1K_Super_35(full-ap) 1024x778 (1K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>1K_Cinemascope 914x778 2.00 (1K_Cinemascope)</strong></div>
+<div class="line"><strong>2K_Super_35(full-ap) 2048x1556 (2K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>2K_Cinemascope 1828x1556 2.00 (2K_Cinemascope)</strong></div>
+<div class="line"><strong>2K_DCP 2048x1080 (2K_DCP)</strong></div>
+<div class="line"><strong>4K_Super_35(full-ap) 4096x3112 (4K_Super_35(full-ap))</strong></div>
+<div class="line"><strong>4K_Cinemascope 3656x3112 2.00 (4K_Cinemascope)</strong></div>
+<div class="line"><strong>4K_DCP 4096x2160 (4K_DCP)</strong></div>
+<div class="line"><strong>square_256 256x256 (square_256)</strong></div>
+<div class="line"><strong>square_512 512x512 (square_512)</strong></div>
+<div class="line"><strong>square_1K 1024x1024 (square_1K)</strong></div>
+<div class="line"><strong>square_2K 2048x2048 (square_2K)</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Bottom Left / <code class="docutils literal notranslate"><span class="pre">bottomLeft</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0</p></td>
+<td><p>Coordinates of the bottom left corner of the size rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>Size / <code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>w: 1 h: 1</p></td>
+<td><p>Width and height of the size rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Invert / <code class="docutils literal notranslate"><span class="pre">invert</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Invert the transform.</p></td>
+</tr>
+<tr class="row-even"><td><p>Filter / <code class="docutils literal notranslate"><span class="pre">filter</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Cubic</p></td>
+<td><div class="line-block">
+<div class="line">Filtering algorithm - some filters may produce values outside of the initial range (*) or modify the values even if there is no movement (+).</div>
+<div class="line"><strong>Impulse (impulse)</strong>: (nearest neighbor / box) Use original values.</div>
+<div class="line"><strong>Box (box)</strong>: Integrate the source image over the bounding box of the back-transformed pixel.</div>
+<div class="line"><strong>Bilinear (bilinear)</strong>: (tent / triangle) Bilinear interpolation between original values.</div>
+<div class="line"><strong>Cubic (cubic)</strong>: (cubic spline) Some smoothing.</div>
+<div class="line"><strong>Keys (keys)</strong>: (Catmull-Rom / Hermite spline) Some smoothing, plus minor sharpening (*).</div>
+<div class="line"><strong>Simon (simon)</strong>: Some smoothing, plus medium sharpening (*).</div>
+<div class="line"><strong>Rifman (rifman)</strong>: Some smoothing, plus significant sharpening (*).</div>
+<div class="line"><strong>Mitchell (mitchell)</strong>: Some smoothing, plus blurring to hide pixelation (*)(+).</div>
+<div class="line"><strong>Parzen (parzen)</strong>: (cubic B-spline) Greatest smoothing of all filters (+).</div>
+<div class="line"><strong>Notch (notch)</strong>: Flat smoothing (which tends to hide moire’ patterns) (+).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Clamp / <code class="docutils literal notranslate"><span class="pre">clamp</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Clamp filter output within the original range - useful to avoid negative values in mattes</p></td>
+</tr>
+<tr class="row-even"><td><p>Black outside / <code class="docutils literal notranslate"><span class="pre">black_outside</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td><p>Fill the area outside the source image with black</p></td>
+</tr>
+<tr class="row-odd"><td><p>Motion Blur / <code class="docutils literal notranslate"><span class="pre">motionBlur</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Quality of motion blur rendering. 0 disables motion blur, 1 is a good value. Increasing this slows down rendering.</p></td>
+</tr>
+<tr class="row-even"><td><p>Directional Blur Mode / <code class="docutils literal notranslate"><span class="pre">directionalBlur</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>Motion blur is computed from the original image to the transformed image, each parameter being interpolated linearly. The motionBlur parameter must be set to a nonzero value, and the blackOutside parameter may have an important effect on the result.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shutter / <code class="docutils literal notranslate"><span class="pre">shutter</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0.5</p></td>
+<td><p>Controls how long (in frames) the shutter should remain open.</p></td>
+</tr>
+<tr class="row-even"><td><p>Shutter Offset / <code class="docutils literal notranslate"><span class="pre">shutterOffset</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Start</p></td>
+<td><div class="line-block">
+<div class="line">Controls when the shutter should be open/closed. Ignored if there is no motion blur (i.e. shutter=0 or motionBlur=0).</div>
+<div class="line"><strong>Centered (centered)</strong>: Centers the shutter around the frame (from t-shutter/2 to t+shutter/2)</div>
+<div class="line"><strong>Start (start)</strong>: Open the shutter at the frame (from t to t+shutter)</div>
+<div class="line"><strong>End (end)</strong>: Close the shutter at the frame (from t-shutter to t)</div>
+<div class="line"><strong>Custom (custom)</strong>: Open the shutter at t+shuttercustomoffset (from t+shuttercustomoffset to t+shuttercustomoffset+shutter)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Custom Offset / <code class="docutils literal notranslate"><span class="pre">shutterCustomOffset</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>When custom is selected, the shutter is open at current time plus this offset (in frames). Ignored if there is no motion blur (i.e. shutter=0 or motionBlur=0).</p></td>
+</tr>
+<tr class="row-even"><td><p>Interactive Update / <code class="docutils literal notranslate"><span class="pre">interactive</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>If checked, update the parameter values during interaction with the image viewer, else update the values when pen is released.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="net.sf.openfx.CornerPinPlugin.html" class="btn btn-neutral float-right" title="CornerPin node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="net.sf.openfx.AdjustRoDPlugin.html" class="btn btn-neutral float-left" title="AdjustRoD node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

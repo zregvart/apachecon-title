@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LightWrap node &mdash; Natron 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Noise node" href="net.sf.cimg.CImgNoise.html" />
+    <link rel="prev" title="Draw nodes" href="../_groupDraw.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Natron
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../_group.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_prefs.html">Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_environment.html">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupImage.html">Image nodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../_groupDraw.html">Draw nodes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LightWrap node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controls">Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgNoise.html">Noise node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.cimg.CImgPlasma.html">Plasma node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Radial.html">Radial node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Ramp.html">Ramp node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Noise.html">Rand node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.Rectangle.html">Rectangle node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.built-in.Roto.html">Roto node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fr.inria.built-in.RotoPaint.html">RotoPaint node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SeGrain.html">SeGrain node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.sf.openfx.SeNoise.html">SeNoise node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="net.fxarena.openfx.Text.html">Text node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTime.html">Time nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupChannel.html">Channel nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupColor.html">Color nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupFilter.html">Filter nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupKeyer.html">Keyer nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupMerge.html">Merge nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupTransform.html">Transform nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupViews.html">Views nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupOther.html">Other nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupGMIC.html">GMIC nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_groupExtra.html">Extra nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../_group.html">Reference Guide</a> &raquo;</li>
+        
+          <li><a href="../_groupDraw.html">Draw nodes</a> &raquo;</li>
+        
+      <li>LightWrap node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/plugins/fr.inria.LightWrap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lightwrap-node">
+<span id="fr-inria-lightwrap"></span><h1>LightWrap node<a class="headerlink" href="#lightwrap-node" title="Permalink to this headline">¶</a></h1>
+<!-- Do not edit this file! It is generated automatically by Natron itself. --><p><a class="reference internal" href="../_images/fr.inria.LightWrap.png"><img alt="pluginIcon" src="../_images/fr.inria.LightWrap.png" style="width: 10.0%;" /></a></p>
+<p><em>This documentation is for version 1.0 of LightWrap (fr.inria.LightWrap).</em></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>LightWrap helps composite objects onto a bright background by simulating reflections from the background light on the foreground, around its edges. Input A is the foreground image and its matte, and input B the the background to use for the wrapping effect.</p>
+<p>The output of LightWrap should then be composited over the background to give the final composite.</p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 43%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Optional</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 2%" />
+<col style="width: 5%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter / script name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Convert to Group / <code class="docutils literal notranslate"><span class="pre">convertToGroup</span></code></p></td>
+<td><p>Button</p></td>
+<td></td>
+<td><p>Converts this node to a Group: the internal node-graph and the user parameters will become editable</p></td>
+</tr>
+<tr class="row-odd"><td><p>Diffuse / <code class="docutils literal notranslate"><span class="pre">diffuse</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 15 y: 15</p></td>
+<td><p>Size of the reflections from the background to the foreground element (Intensity controls their intensity). Start by setting Diffuse to zero and adjust intensity to see what colors from the background are being reflected. Then adjust Diffuse, come back to Intensity if necessary, and balance both parameters until the result is satisfactory.</p></td>
+</tr>
+<tr class="row-even"><td><p>Intensity / <code class="docutils literal notranslate"><span class="pre">intensity</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Brightness of the reflections from the background to the foreground element (Diffuse controls their size). Start by setting Diffuse to zero and adjust intensity to see what colors from the background are being reflected. Then adjust Diffuse, come back to Intensity if necessary, and balance both parameters until the result is satisfactory.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Generate Wrap Only / <code class="docutils literal notranslate"><span class="pre">onlyWrap</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, the LightWrap in generated but is not merged with the foreground object (disables the Highlight Merge).</p></td>
+</tr>
+<tr class="row-even"><td><p>Disable luminance-Based Wrap / <code class="docutils literal notranslate"><span class="pre">disableLuma</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, the LightWrap effect is created uniformly around the edged, rather than being controled by the color of the background.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable Glow / <code class="docutils literal notranslate"><span class="pre">enableGlow</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, the LightWrap is not masked by the foreground object, so that the objects seems to glow.</p></td>
+</tr>
+<tr class="row-even"><td><p>FGBlur / <code class="docutils literal notranslate"><span class="pre">fgblur</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 1 y: 1</p></td>
+<td><p>Size of the blur applied to the alpha channel of the foreground (i.e. the foreground matte). More blur causes more background to be added to the foreground.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FGBlur Border Conditions / <code class="docutils literal notranslate"><span class="pre">fgblurBoundary</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>Black</p></td>
+<td><div class="line-block">
+<div class="line">Border conditions of the blur applied to the alpha channel of the foreground (i.e. the foreground matte). Use “Black” in most cases, and “Nearest” if the foreground matte should be extended beyond image borders when it touches them.</div>
+<div class="line"><strong>Black (black)</strong>: Dirichlet boundary condition: pixel values out of the image domain are zero.</div>
+<div class="line"><strong>Nearest (nearest)</strong>: Neumann boundary condition: pixel values out of the image domain are those of the closest pixel location in the image domain.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>BGBlur / <code class="docutils literal notranslate"><span class="pre">bgblur</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>x: 0 y: 0</p></td>
+<td><p>Size of the blur applied to the background before merging it with the foreground element and applying the Diffuse blur.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">saturation</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>1</p></td>
+<td><p>Color saturation of the LightWrap effect. Advanced color correction parameters are available in the ColorCorrect tab.</p></td>
+</tr>
+<tr class="row-even"><td><p>Luma Tolerance / <code class="docutils literal notranslate"><span class="pre">lumaTolerance</span></code></p></td>
+<td><p>Double</p></td>
+<td><p>0</p></td>
+<td><p>Luminance threshold of the LightWrap effect. Luminance values below this do not generate a LightWrap.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Highlight Merge / <code class="docutils literal notranslate"><span class="pre">highlightmerge</span></code></p></td>
+<td><p>Choice</p></td>
+<td><p>plus</p></td>
+<td><div class="line-block">
+<div class="line">Merge operation between the foreground object and the background. The default operation is “plus”, which produces a glow effect.</div>
+<div class="line"><strong>atop</strong>: Ab + B(1 - a) (a.k.a. src-atop)</div>
+<div class="line"><strong>average</strong>: (A + B) / 2</div>
+<div class="line"><strong>color</strong>: SetLum(A, Lum(B))</div>
+<div class="line"><strong>color-burn</strong>: darken B towards A</div>
+<div class="line"><strong>color-dodge</strong>: brighten B towards A</div>
+<div class="line"><strong>conjoint-over</strong>: A + B(1-a)/b, A if a &gt; b</div>
+<div class="line"><strong>copy</strong>: A (a.k.a. src)</div>
+<div class="line"><strong>difference</strong>: abs(A-B) (a.k.a. absminus)</div>
+<div class="line"><strong>disjoint-over</strong>: A+B(1-a)/b, A+B if a+b &lt; 1</div>
+<div class="line"><strong>divide</strong>: A/B, 0 if A &lt; 0 and B &lt; 0</div>
+<div class="line"><strong>exclusion</strong>: A+B-2AB</div>
+<div class="line"><strong>freeze</strong>: 1-sqrt(1-A)/B</div>
+<div class="line"><strong>from</strong>: B-A (a.k.a. subtract)</div>
+<div class="line"><strong>geometric</strong>: 2AB/(A+B)</div>
+<div class="line"><strong>grain-extract</strong>: B - A + 0.5</div>
+<div class="line"><strong>grain-merge</strong>: B + A - 0.5</div>
+<div class="line"><strong>hard-light</strong>: multiply(2*A, B) if A &lt; 0.5, screen(2*A - 1, B) if A &gt; 0.5</div>
+<div class="line"><strong>hue</strong>: SetLum(SetSat(A, Sat(B)), Lum(B))</div>
+<div class="line"><strong>hypot</strong>: sqrt(A*A+B*B)</div>
+<div class="line"><strong>in</strong>: Ab (a.k.a. src-in)</div>
+<div class="line"><strong>luminosity</strong>: SetLum(B, Lum(A))</div>
+<div class="line"><strong>mask</strong>: Ba (a.k.a dst-in)</div>
+<div class="line"><strong>matte</strong>: Aa + B(1-a) (unpremultiplied over)</div>
+<div class="line"><strong>max</strong>: max(A, B) (a.k.a. lighten only)</div>
+<div class="line"><strong>min</strong>: min(A, B) (a.k.a. darken only)</div>
+<div class="line"><strong>minus</strong>: A-B</div>
+<div class="line"><strong>multiply</strong>: AB, A if A &lt; 0 and B &lt; 0</div>
+<div class="line"><strong>out</strong>: A(1-b) (a.k.a. src-out)</div>
+<div class="line"><strong>over</strong>: A+B(1-a) (a.k.a. src-over)</div>
+<div class="line"><strong>overlay</strong>: multiply(A, 2*B) if B &lt; 0.5, screen(A, 2*B - 1) if B &gt; 0.5</div>
+<div class="line"><strong>pinlight</strong>: if B &gt;= 0.5 then max(A, 2*B - 1), min(A, B * 2) else</div>
+<div class="line"><strong>plus</strong>: A+B (a.k.a. add)</div>
+<div class="line"><strong>reflect</strong>: A*A / (1 - B)</div>
+<div class="line"><strong>saturation</strong>: SetLum(SetSat(B, Sat(A)), Lum(B))</div>
+<div class="line"><strong>screen</strong>: A+B-AB if A or B &lt;= 1, otherwise max(A, B)</div>
+<div class="line"><strong>soft-light</strong>: burn-in if A &lt; 0.5, lighten if A &gt; 0.5</div>
+<div class="line"><strong>stencil</strong>: B(1-a) (a.k.a. dst-out)</div>
+<div class="line"><strong>under</strong>: A(1-b)+B (a.k.a. dst-over)</div>
+<div class="line"><strong>xor</strong>: A(1-b)+B(1-a)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Use Constant Highlight / <code class="docutils literal notranslate"><span class="pre">useConstant</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>Off</p></td>
+<td><p>When checked, use a constant color (specified by the Constant parameter) instead of the background for the LightWrap effect.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Constant / <code class="docutils literal notranslate"><span class="pre">constantcolor</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td><p>Color to use in the LightWrap effect when Use constant highlight is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MasterSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MasterContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MasterGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MasterGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MasterOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1ShadowsOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1MidtonesOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Enable / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsEnable</span></code></p></td>
+<td><p>Boolean</p></td>
+<td><p>On</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Saturation / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsSaturation</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsContrast</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Gamma / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsGamma</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Gain / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsGain</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 1 g: 1 b: 1 a: 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Offset / <code class="docutils literal notranslate"><span class="pre">ColorCorrect1HighlightsOffset</span></code></p></td>
+<td><p>Color</p></td>
+<td><p>r: 0 g: 0 b: 0 a: 0</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="net.sf.cimg.CImgNoise.html" class="btn btn-neutral float-right" title="Noise node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../_groupDraw.html" class="btn btn-neutral float-left" title="Draw nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2021 The Natron documentation authors, licensed under CC BY-SA 4.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
