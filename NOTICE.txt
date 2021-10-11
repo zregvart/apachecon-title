@@ -1,0 +1,3 @@
+Content of the Natron directory is a binary distribution of the Natron project for 64bit Linux. Natron is GPLv2 licensed available at https://natrongithub.github.io/.
+asf_logo.svg, banner.png, round.svg and feather.svg exact or based on logos trademarked by the Apache Software Foundation and available https://www.apache.org/foundation/press/kit/.
+title.ntp, redner.py and render.sh were authored by me (Zoran Regvart) and are licensed under CC0 https://creativecommons.org/publicdomain/zero/1.0/
